@@ -74,12 +74,13 @@ void initGraphics()
 
 int main( int argc, char **argv )
 {
+  QNetworkProxyFactory::setUseSystemConfiguration(true);
+  
   if ( argc > 1 && strcmp( argv[1], "--service" ) == 0 )
   {
     QCoreApplication::setOrganizationName( "OPENGIS.ch" );
     QCoreApplication::setOrganizationDomain( "opengis.ch" );
     QCoreApplication::setApplicationName( qfield::appName );
-    QNetworkProxyFactory::setUseSystemConfiguration(true);
 
 #if defined( Q_OS_ANDROID )
     // For now the service only deals with background attachment uploads and will terminate once all uploads are done
