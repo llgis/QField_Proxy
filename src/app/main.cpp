@@ -79,6 +79,7 @@ int main( int argc, char **argv )
     QCoreApplication::setOrganizationName( "OPENGIS.ch" );
     QCoreApplication::setOrganizationDomain( "opengis.ch" );
     QCoreApplication::setApplicationName( qfield::appName );
+    QNetworkProxyFactory::setUseSystemConfiguration(true);
 
 #if defined( Q_OS_ANDROID )
     // For now the service only deals with background attachment uploads and will terminate once all uploads are done
